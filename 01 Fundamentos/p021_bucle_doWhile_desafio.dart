@@ -1,21 +1,23 @@
 
 /********************************************************************************
 
-Imagina que tienes un juego de adivinanzas donde el usuario tiene que adivinar un número secreto.
+Imagina que tienes un programa que permite al usuario jugar a un juego de adivinanzas.
 
-El número secreto está entre 1 y 100.
+El objetivo del juego es adivinar un número secreto que está entre 1 y 100.
 
 El usuario tiene 10 intentos para adivinar el número secreto.
 
 El programa debe:
+    Mostrar un mensaje al usuario que indique que debe adivinar un número secreto entre 1 y 100.
     Pedir al usuario que ingrese un número.
     Si el número es mayor que el número secreto, el programa debe mostrar un mensaje que indique que el número secreto es menor.
     Si el número es menor que el número secreto, el programa debe mostrar un mensaje que indique que el número secreto es mayor.
     Si el usuario adivina el número secreto, el programa debe mostrar un mensaje de felicitación.
     Si el usuario no adivina el número secreto en 10 intentos, el programa debe mostrar un mensaje que indique que ha perdido el juego.
 
+Debes usar un bucle do-while para controlar los intentos del usuario.
+
 Consejos:
-    Usa un bucle while para controlar los intentos del usuario.
     Usa una variable para almacenar el número de intentos restantes.
     Usa una variable para almacenar el número adivinado por el usuario.
     Usa una variable para almacenar el número secreto.
@@ -39,7 +41,7 @@ void main() {
 
   // Pedimos al usuario que ingrese un numero y 
   // comparamos hasta encontrar el numero secreto
-  while (c < 11) {
+  do {
     stdout.write("Ingresa un numero: ");
     int miNumero = int.parse(stdin.readLineSync()!);
     
@@ -50,12 +52,13 @@ void main() {
     else {
       print("Felicidades, has acertado en $c intentos");
       break;
-    }
+    } 
 
     if (c == 10)
       print("Fin del juego, no tienes mas opotunidades, usaste $c oportunidades");
 
     c++;
-  }
+    
+  } while (c < 11);
 
 }
