@@ -48,7 +48,7 @@ void main() {
   double imc = peso / pow(estatura, 2);
 
   // Buscamos la clasficacion y mostramos el resultado
-  stdout.write("Su IMC es: $imc y su clasificacion es: ");
+  stdout.write("Su IMC es: ${imc.toStringAsFixed(2)} y su clasificacion es: ");
 
   if (imc >= 30)
     stdout.write("OBESIDAD");
@@ -58,5 +58,5 @@ void main() {
     stdout.write("PESO SALUDABLE");
   else
     stdout.write("BAJO PESO");
-
+    
 }
